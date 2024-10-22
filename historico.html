@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Registros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Histórico de Registros</h1>
+
+    <table id="usuariosTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os usuários cadastrados aparecerão aqui -->
+        </tbody>
+    </table>
+
+    <a href="index.html" class="btn">Voltar ao Cadastro</a>
+</div>
+
+<script>
+    // Função para carregar os usuários cadastrados no localStorage
+    function carregaUsuarios() {
+        var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        var tableBody = document.getElementById('usuariosTable').getElementsByTagName('tbody')[0];
+
+        // Limpa a tabela antes de preencher
+        tableBody.innerHTML = '';
+
+        // Adiciona cada usuário à tabela
+        usuarios.forEach(function(usuario) {
+            var newRow = tableBody.insertRow();
+            var cellNome = newRow.insertCell(0);
+            var cellEmail = newRow.insertCell(1);
+
+            cellNome.innerHTML = usuario.nome;
+            cellEmail.innerHTML = usuario.email;
+        });
+    }
+
+    // Carrega os usuários quando a página é carregada
+    document.addEventListener('DOMContentLoaded', carregaUsuarios);
+</script>
+
+</body>
+</html>
