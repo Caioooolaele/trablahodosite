@@ -1,0 +1,31 @@
+Linha 1: Adiciona um "ouvinte" ao formulário para o evento de envio (submit).
+
+Linha 2:Impede o recarregamento da página quando o formulário é enviado, permitindo que você controle o envio via JavaScript.
+
+Linha 3 e 4: Essas duas linhas estão pegando os valores inseridos pelo usuário nos campos do formulário (um para o nome e outro para o e-mail) e armazenando esses valores nas variáveis nome e email, respectivamente, para que possam ser usados mais tarde no código (como ao salvar no localStorage ou exibir em uma tabela).
+
+Linha 5: Recupera os usuários previamente cadastrados no localStorage (ou inicializa um array vazio se ainda não houver nenhum).
+
+Linha 6: Adiciona o novo usuário (com nome e e-mail) ao array de usuários.
+
+Linha 7:Salva o array de usuários atualizado no localStorage para que os dados fiquem armazenados mesmo após recarregar a página ou fechar o navegador.
+
+Linha 8:muda a URL da página atual para historico.html, levando o usuário para a página de histórico onde os dados dos usuários cadastrados são exibidos. É uma forma simples de navegar entre diferentes páginas do seu site.
+
+Linha 9:Verifica se a URL atual é historico.html para garantir que o código a seguir só seja executado nesta página específica.
+
+Linha 10:Recupera os usuários armazenados no localStorage e os transforma em um array, ou inicializa um array vazio se não houver dados.
+
+Linha 11:Seleciona o corpo da tabela onde os dados dos usuários serão exibidos.
+
+Linha 12:Itera sobre cada objeto usuario no array usuarios
+
+Linha 13:Cria uma nova linha na tabela para cada usuário.
+
+Linha 14:Adiciona a primeira célula na nova linha para armazenar o nome do usuário.
+
+Linha 15:Adiciona a segunda célula na mesma linha para armazenar o e-mail do usuário.
+
+Linha 16:Define o conteúdo da célula cellNome para o nome do usuário, usando
+
+Linha 17:Define o conteúdo da célula cellEmail para o e-mail do usuário, usando usuario.email.
